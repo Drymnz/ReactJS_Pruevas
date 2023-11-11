@@ -1,19 +1,26 @@
 
-/* metodo de js
-const element = document.createElement('h1');
-
-element.innerText = 'hola mundo';
-
-const conteiner = document.getElementById('root');
-
-conteiner.appendChild(element); 
-*/
-
 import React from "react";
-import ReactDOM from 'react-dom'
+import * as ReactDOMClient from 'react-dom/client'
+import Card from './Components/Card.js'
+import { Style } from "bootstrap/dist/css/bootstrap.min.css";
+/* import { Style_one } from "./Components/styles/Card.css"; */
 
+const rootElement =document.getElementById("root");
 
-const user = {
+const root = ReactDOMClient.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <Card
+      title="Deporte"
+      description="Otro deporte"
+      img=""
+      letColor="#A74CF2"
+      reghtColor="#617BFB"
+    />
+  </React.StrictMode>
+);
+
+/* const user = {
   firtName:'Benjamin',
   lastName:'Perez',
   avatar:'http'
@@ -36,9 +43,20 @@ function getGreeting(user)
 const nombre = 'Benjamin'
 /* const element = <h1>Hola mundo {nombre}, {getName(user)} </h1>; */
 /* const element = <div>{getGreeting(user)}</div> */
-const element = <div>{getGreeting()}</div>
+/* const element = <div>{getGreeting()}</div>
 
 const conteiner = document.getElementById('root');
 
 //ReactDOM.render(__que,__donde)
-ReactDOM.render(element,conteiner); 
+ReactDOM.render(element,conteiner);  */
+
+
+/* metodo de js
+const element = document.createElement('h1');
+
+element.innerText = 'hola mundo';
+
+const conteiner = document.getElementById('root');
+
+conteiner.appendChild(element); 
+*/
