@@ -1,22 +1,16 @@
 
 import React from "react";
 import * as ReactDOMClient from 'react-dom/client'
-import Card from './Components/Card.js'
 import { Style } from "bootstrap/dist/css/bootstrap.min.css";
 /* import { Style_one } from "./Components/styles/Card.css"; */
+import App from './Components/App'
 
 const rootElement =document.getElementById("root");
 
 const root = ReactDOMClient.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <Card
-      title="Deporte"
-      description="Otro deporte"
-      img=""
-      letColor="#A74CF2"
-      reghtColor="#617BFB"
-    />
+    <App></App>
   </React.StrictMode>
 );
 
