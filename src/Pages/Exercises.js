@@ -2,6 +2,7 @@ import React from "react";
 import ExerciseList from "../Components/ExerciseList";
 import AddButtom from "../Components/AddButton";
 import Welcome from "../Components/Welcome";
+import Loading from "../Components/Loading";
 
 class Exercises extends React.Component {
   /* constructor(props) {
@@ -33,15 +34,54 @@ class Exercises extends React.Component {
         rightColor: "#F76B1C",
       },
     ],
+    loadgin: true,
+    error: null,
   };
+
+  /* //para la respuestas de un API
+  //sincronizacion
+  async componentDidMount() {
+    await this.fetchExercises();
+  }
+
+  fetchExercises = async () => {
+    try {
+      //la peticion
+      let res = await fetch("http://localhost:8000/api/exercises");
+      //convertir a json
+      let data = await res.json();
+
+      this.setState({
+        data,
+        loading: false,
+      });
+    } catch (error) {
+      this.setState({
+        //control de error
+        loading: false,
+        error,
+      });
+    }
+  };
+ */
   render() {
-    return (
-      <div>
-        <Welcome username="Benjamin" />
-        <ExerciseList exercises={this.state.data} />
-        <AddButtom />
-      </div>
-    );
+    if (this.state.loadgin) {
+      return (
+        <div>
+          <Welcome username="Benjamin" />
+          <ExerciseList exercises={this.state.data} />
+          <AddButtom />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Welcome username="Benjamin" />
+          <Loading></Loading>;
+          <AddButtom />
+        </div>
+      );
+    }
   }
 }
 
