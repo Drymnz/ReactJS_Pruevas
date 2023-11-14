@@ -28,3 +28,7 @@
     margin-bottom: 80px;
     height: 60px;
 }
+.img-card
+{
+    max-height: 100px;
+}

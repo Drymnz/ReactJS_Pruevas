@@ -16,5 +16,17 @@ const ExerciseList = ({exercises}) => (
     </div>    
 )
 
-
+/* function ExerciseList(props) {
+    return(
+        props.exercise.map((exercise) => (<Card 
+            key={exercise.id}
+            title={exercise.title}
+            description={exercise.description}
+            img={exercise.img}
+            leftColor={exercise.leftColor}
+            rightColor={exercise.rightColor}
+        />))
+    )
+}
+ */
 export default ExerciseList
