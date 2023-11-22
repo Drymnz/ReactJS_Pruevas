@@ -1,7 +1,6 @@
 import React from "react";
 
-const ExerciseForm = ({ form , onSubmit ,onChange }) => {
-
+const ExerciseForm = ({ form, onSubmit, onChange }) => {
   return (
     <div className="container">
       <form onSubmit={onSubmit}>
@@ -70,7 +69,7 @@ const ExerciseForm = ({ form , onSubmit ,onChange }) => {
           </div>
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+            Enviar
         </button>
       </form>
     </div>

@@ -2,11 +2,18 @@ import React from "react";
 import ExerciseList from "../Components/ExerciseList";
 import AddButtom from "../Components/AddButton";
 import Welcome from "../Components/Welcome";
-import Loading from "../Components/Loading";
 
-class Exercises extends React.Component {
-  /* constructor(props) {
-    super(props); */
+const Exercises = ({ data }) => (
+  <React.Fragment>
+    <Welcome username="Benjamin" />
+    <ExerciseList exercises={data} />
+    <AddButtom />
+  </React.Fragment>
+);
+
+/* class Exercises extends React.Component {
+  // constructor(props) {
+  //  super(props); 
   state = {
     data: [
       {
@@ -38,51 +45,45 @@ class Exercises extends React.Component {
     error: null,
   };
 
-  /* //para la respuestas de un API
-  //sincronizacion
-  async componentDidMount() {
-    await this.fetchExercises();
-  }
+  // //para la respuestas de un API
+  //sincronizacion 
+  //async componentDidMount() {
+    //await this.fetchExercises();
+  //}
 
-  fetchExercises = async () => {
-    try {
-      //la peticion
-      let res = await fetch("http://localhost:8000/api/exercises");
-      //convertir a json
-      let data = await res.json();
+  //fetchExercises = async () => {
+  //  try {
+      //la peticion de tipo GET 
+    ////  let res = await fetch("http://localhost:8000/api/exercises");
+      //convertir a json 
+  ////    let data = await res.json();
 
-      this.setState({
-        data,
-        loading: false,
-      });
-    } catch (error) {
-      this.setState({
+  //    this.setState({
+    //    data,
+  //      loading: false,
+   //   });
+   // } catch (error) {
+  //    this.setState({
         //control de error
-        loading: false,
-        error,
-      });
-    }
-  };
- */
+  //      loading: false,
+  //      error,
+    //  });
+  //  }
+ // };
+ //
   render() {
-    if (this.state.loadgin) {
-      return (
-        <div>
-          <Welcome username="Benjamin" />
-          <ExerciseList exercises={this.state.data} />
-          <AddButtom />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Welcome username="Benjamin" />
-          <Loading></Loading>;
-          <AddButtom />
-        </div>
-      );
-    }
+    if (this.state.loading) return <Loading />;
+
+    if (this.state.error) return <FatalError />;
+
+    return (
+      <React.Fragment>
+        <Welcome username="Benjamin" />
+        <ExerciseList exercises={this.state.data} />
+        <AddButtom />
+      </React.Fragment>
+    );
   }
-}
+} */
 
 export default Exercises;

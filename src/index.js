@@ -1,7 +1,7 @@
 
 import React from "react";
 import * as ReactDOMClient from 'react-dom/client'
-import { Style } from "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.css'
 /* import { Style_one } from "./Components/styles/Card.css"; */
 import App from './Components/App'
 
